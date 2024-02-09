@@ -1,0 +1,44 @@
+# docker-compose file used for development
+
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 127.0.0.1:27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb-admin
+      MONGO_INITDB_ROOT_PASSWORD: cmCSXFr3GgEr3KON
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 127.0.0.1:8081:8081
+    environment:
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: t28EJn0E5wFRGDx0
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb-admin:cmCSXFr3GgEr3KON@mongo:27017/
+
+  backend:
+    build:
+      context: ./backend
+    depends_on:
+      - mongo
+    volumes:
+      - ./backend/app:/usr/src/app
+    ports:
+      - 127.0.0.1:8000:8000
+
+  frontend:
+    build:
+      context: ./frontend
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/usr/src/app
+    ports:
+      - 127.0.0.1:3000:3000
