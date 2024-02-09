@@ -1,0 +1,7 @@
+[run]
+
+omit =
+    tests/*
+    *_*
+    export_files/*
+    core/*
