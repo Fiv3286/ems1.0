@@ -21,7 +21,7 @@ and a backend application in Python.
 ## Authors
 Design Project Group 6
 
-Aleksandar Petrov | Benjamin Othmer | Daniel Mocanu | Jiayi Tan | Kristiyan Michaylov
+Aleksandar Petrov | Benjamin Othmer | Daniel Mocanu | Jiayi Tan | Kristiyan Michaylov | Stefan Simionescu
 
 
 The source code, both frontend and backend, has been adjusted by [Jan Kofron](jan.kofron@d3s.mff.cuni.cz).
