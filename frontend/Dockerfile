@@ -1,11 +1,4 @@
-FROM ubuntu:22.04
-
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y software-properties-common ca-certificates &&\
-    update-ca-certificates
-
-RUN apt install -y nodejs npm
+FROM node:20
 
 WORKDIR /usr/src
 
