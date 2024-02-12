@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 
 WORKDIR /opt/frontend
 RUN npm install
-RUN npm exec update-browserslist-db@latest
+RUN npx browserslist@latest --update-db
 #RUN npm audit fix
 #RUN npm start
 

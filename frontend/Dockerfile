@@ -1,11 +1,12 @@
 FROM node:20
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 COPY ./package.json .
 COPY ./package-lock.json .
+
 RUN npm install
-RUN npm exec update-browserslist-db@latest
+RUN npx browserslist@latest --update-db
 
 EXPOSE 3000
 

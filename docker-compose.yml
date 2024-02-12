@@ -39,6 +39,6 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./frontend:/usr/src/app
+      - ./frontend:/usr/src/
     ports:
       - 127.0.0.1:3000:3000
